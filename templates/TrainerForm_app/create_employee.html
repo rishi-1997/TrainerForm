@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Trainer</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+<div align="center">
+    <h1>Add Trainer</h1>
+    <br>
+    <form action="" method="post">
+    <table border="0">
+    {{ form.as_table}}
+        </table>
+    {% csrf_token %}
+        <br>
+    <input type="submit" class="btn btn-primary" value="insert record">
+    </form>
+</div>
+<a href="/" style="position: absolute; bottom: 10px; margin:0px 0px 10px 2%;"><img data-toggle="tooltip" title="Home" style="border-radius: 50%; height: 60px" src="{% static 'images/home_page_icon.jpg' %}"></a>
+<a href="/" style="position: absolute; bottom: 10px; margin:10px 10px 10px 88%"><img data-toggle="tooltip" title="back" style="border-radius: 50%; height: 60px" src="{% static 'images/back_arrow_image.png' %}"></a>
+<a href="/" style="position: absolute; bottom: 10px; margin:10px 10px 10px 94%"><img data-toggle="tooltip" title="forward" style="border-radius: 50%; height: 60px" src="{% static 'images/front_arrow_image.png' %}"></a>
+
+</body>
+</html>

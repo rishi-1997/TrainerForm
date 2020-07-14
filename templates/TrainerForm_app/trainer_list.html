@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trainer list</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        tr:nth-child(even) {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <h1 align="center">Trainers Information Table</h1><br>
+    <table align="center">
+    <thead style="background: cornflowerblue; color: white">
+        <th width="200px" height="40px">First Name</th>
+        <th width="200px">Middle Name</th>
+        <th width="200px">Last Name</th>
+        <th width="150px">id</th>
+        <th width="200px">Address</th>
+        <th width="100px">Action</th>
+    </thead>
+    {% for x in trainer %}
+       <tr>
+        <td height="30px">{{ x.first_name }}</td>
+        <td>{{ x.middle_name }}</td>
+        <td>{{ x.last_name }}</td>
+        <td>{{ x.trainer_id }}</td>
+        <td>{{ x.address }}</td>
+        <td><a href=/update/{{ x.id }}><img data-toggle="tooltip" title="Update" style="border-radius: 40%; margin: 0px 0px 0px 0px; display: inline" src="{% static 'images/update_image.png' %}" height="20px" width="20px" ></a>&nbsp | &nbsp<a href=/delete/{{ x.id }}><img data-toggle="tooltip" title="Delete" style="border-radius: 50%; margin: 0px 0px 0px 0px; display: inline" src="{% static 'images/delete_image.png' %}" height="20px" width="20px" ></a></td>
+    {% endfor %}
+    </table>
+    <a href="/create/"><img data-toggle="tooltip" title="Add New Trainer" style="border-radius: 50%;margin: 10px 0px 0px 0px;height: 75px; width: 80px" src="{% static 'images/add_trainer.jpg' %}"> </a>
+</div>
+<a href="/" style="position: absolute; bottom: 10px; margin:0px 0px 10px 2%;"><img  data-toggle="tooltip" title="Home" style="border-radius: 50%; height: 60px" src="{% static 'images/home_page_icon.jpg' %}"></a>
+</body>
+</html>
